@@ -3,10 +3,11 @@
 
 
 <!DOCTYPE html>
+<link rel="stylesheet" href="${pageContext.request.contextPath}/css/admin.css?ts=${System.currentTimeMillis()}">
 <html>
     <head>
         <meta charset="utf-8">
-        <link rel="stylesheet" href="${pageContext.request.contextPath}/css/style.css?ts=${System.currentTimeMillis()}">
+
     </head>
     <body>
         <div class="top">
@@ -17,6 +18,7 @@
                     <img class="logoimg" src="${pageContext.request.contextPath}/img/gurmaniya.png" alt="">
                     </div>
                 <div>
+                <h1>ADMIN '${requestScope.login.toString()}'</h1>
                     <div class="KRB">
                         <div class="gps">
                         <img class="gpsimg" src="${pageContext.request.contextPath}/img/gps.png" alt="">
