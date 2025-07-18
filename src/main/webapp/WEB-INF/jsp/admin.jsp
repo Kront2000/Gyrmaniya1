@@ -18,7 +18,7 @@
                     <img class="logoimg" src="${pageContext.request.contextPath}/img/gurmaniya.png" alt="">
                     </div>
                 <div>
-                <h1>ADMIN '${requestScope.login.toString()}'</h1>
+                
                     <div class="KRB">
                         <div class="gps">
                         <img class="gpsimg" src="${pageContext.request.contextPath}/img/gps.png" alt="">
@@ -59,7 +59,13 @@
                                 <img class='dishimg' src='${pageContext.request.contextPath}${dish.imagePath()}' alt=''>
                                 <div class='dish_name'>${dish.name()}</div>
                                 <div class='dish_description'>${dish.description()}</div>
-                                <div class='price'>${dish.price()}тг</div>
+                                <div class="button_and_price">
+                                    <div class='price'>${dish.price()}тг</div>
+                                    <form action="${pageContext.request.contextPath}/edit?id=${dish.id()}" method="post">
+                                        <input class="button" type="submit" value="Редактировать">
+                                    </form>
+                                </div>
+                                
                             </div>
                         </c:if>
                     </c:forEach>

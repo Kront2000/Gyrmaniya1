@@ -17,6 +17,15 @@ public class Dish {
     private String name;
     private Long price;
 
+    public Dish(Long id, Long categoriesID, String description, String image_path, String name, Long price) {
+        this.id = id;
+        this.categoriesID = categoriesID;
+        this.description = description;
+        this.image_path = image_path;
+        this.name = name;
+        this.price = price;
+    }
+
     public Dish(Long categoriesID, String description, String image_path, String name, Long price) {
         this.categoriesID = categoriesID;
         this.description = description;

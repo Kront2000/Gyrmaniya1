@@ -16,7 +16,7 @@ import static java.util.Arrays.stream;
 
 @WebFilter("/*")
 public class AutorizationFilter extends HttpFilter {
-    private static final Set<String> PRIVATE_PATH = Set.of("/gyrmaniya/admin");
+    private static final Set<String> PRIVATE_PATH = Set.of("/gyrmaniya/admin", "/gyrmaniya/edit", "/gyrmaniya/complete");
 
     @Override
     public void doFilter(ServletRequest req, ServletResponse res, FilterChain chain) throws IOException, ServletException {

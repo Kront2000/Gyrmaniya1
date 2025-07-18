@@ -17,6 +17,11 @@ public class PropertiesUtil {
     private static void loadProperties() throws IOException {
         InputStream inputStream = PropertiesUtil.class.getClassLoader()
                 .getResourceAsStream("application.properties");
+
+        if (inputStream == null) {
+            throw new IOException("Файл application.properties не найден в classpath!");
+        }
+
         PROPERTIES.load(inputStream);
     }
 

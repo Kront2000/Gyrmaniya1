@@ -1,5 +1,7 @@
 package Utils;
 
+import Exeptions.PostgresDriverExeption;
+
 import java.lang.reflect.Proxy;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -20,7 +22,11 @@ public class ConnectionManager {
             loadDriver();
             initConnectionPool();
         } catch (ClassNotFoundException e) {
-            throw new RuntimeException(e);
+            try {
+                throw new PostgresDriverExeption(ExeptionMassages.LOAD_SQL_DRIVER_ERROR);
+            } catch (PostgresDriverExeption ex) {
+                throw new RuntimeException(ex);
+            }
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
