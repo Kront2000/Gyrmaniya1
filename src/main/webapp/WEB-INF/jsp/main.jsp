@@ -3,11 +3,11 @@
 
 
 <!DOCTYPE html>
+<link rel="stylesheet" href="${pageContext.request.contextPath}/css/admin.css?ts=${System.currentTimeMillis()}">
 <html>
     <head>
-        <title>main</title>
         <meta charset="utf-8">
-        <link rel="stylesheet" href="${pageContext.request.contextPath}/css/style.css?ts=${System.currentTimeMillis()}">
+
     </head>
     <body>
         <div class="top">
@@ -18,6 +18,7 @@
                     <img class="logoimg" src="${pageContext.request.contextPath}/img/gurmaniya.png" alt="">
                     </div>
                 <div>
+                
                     <div class="KRB">
                         <div class="gps">
                         <img class="gpsimg" src="${pageContext.request.contextPath}/img/gps.png" alt="">
@@ -55,91 +56,147 @@
                     <c:forEach var="dish" items = "${requestScope.dishes}">
                         <c:if test = "${dish.category()  == 'Сеты'}">
                             <div class='dish'>
-                                <img class='dishimg' src='${pageContext.request.contextPath}${dish.imagePath()}' alt=''>
-                                <div class='dish_name'>${dish.name()}</div>
+                                <div class="full_description">
+                                    <img class='dishimg' src='${pageContext.request.contextPath}${dish.imagePath()}' alt=''>
+                                    <div class='dish_name'>${dish.name()}</div>
                                 <div class='dish_description'>${dish.description()}</div>
-                                <div class='price'>${dish.price()}тг</div>
+                                </div>
+                                
+                                <div class="button_and_price">
+                                    <div class='price'>${dish.price()}тг</div>
+                            
+                                </div>
+                                
                             </div>
                         </c:if>
                     </c:forEach>
-                </div>
-                <div class="categories_text">Шаурма</div>
-                <div class="categories">    
-                    <c:forEach var="dish" items = "${requestScope.dishes}">
-                        <c:if test = "${dish.category()  == 'Шаурма'}">
-                            <div class='dish'>
-                                <img class='dishimg' src='${pageContext.request.contextPath}${dish.imagePath()}' alt=''>
-                                <div class='dish_name'>${dish.name()}</div>
-                                <div class='dish_description'>${dish.description()}</div>
-                                <div class='price'>${dish.price()}тг</div>
-                            </div>
-                        </c:if>
-                    </c:forEach>
-                </div>
-                <div class="categories_text">Пицца</div>
-                <div class="categories">    
-                    <c:forEach var="dish" items = "${requestScope.dishes}">
-                        <c:if test = "${dish.category()  == 'Пицца'}">
-                            <div class='dish'>
-                                <img class='dishimg' src='${pageContext.request.contextPath}${dish.imagePath()}' alt=''>
-                                <div class='dish_name'>${dish.name()}</div>
-                                <div class='dish_description'>${dish.description()}</div>
-                                <div class='price'>${dish.price()}тг</div>
-                            </div>
-                        </c:if>
-                    </c:forEach>
+                    
                 </div>
                 <div class="categories_text">Жаренные роллы</div>
                 <div class="categories">    
                     <c:forEach var="dish" items = "${requestScope.dishes}">
                         <c:if test = "${dish.category()  == 'Жаренные роллы'}">
                             <div class='dish'>
-                                <img class='dishimg' src='${pageContext.request.contextPath}${dish.imagePath()}' alt=''>
-                                <div class='dish_name'>${dish.name()}</div>
+                                <div class="full_description">
+                                    <img class='dishimg' src='${pageContext.request.contextPath}${dish.imagePath()}' alt=''>
+                                    <div class='dish_name'>${dish.name()}</div>
                                 <div class='dish_description'>${dish.description()}</div>
-                                <div class='price'>${dish.price()}тг</div>
+                                </div>
+                                
+                                <div class="button_and_price">
+                                    <div class='price'>${dish.price()}тг</div>
+                                    
+                                </div>
+                                
                             </div>
                         </c:if>
                     </c:forEach>
+                    
                 </div>
                 <div class="categories_text">Холодные роллы</div>
                 <div class="categories">    
                     <c:forEach var="dish" items = "${requestScope.dishes}">
                         <c:if test = "${dish.category()  == 'Холодные роллы'}">
                             <div class='dish'>
-                                <img class='dishimg' src='${pageContext.request.contextPath}${dish.imagePath()}' alt=''>
-                                <div class='dish_name'>${dish.name()}</div>
+                                <div class="full_description">
+                                    <img class='dishimg' src='${pageContext.request.contextPath}${dish.imagePath()}' alt=''>
+                                    <div class='dish_name'>${dish.name()}</div>
                                 <div class='dish_description'>${dish.description()}</div>
-                                <div class='price'>${dish.price()}тг</div>
+                                </div>
+                                
+                                <div class="button_and_price">
+                                    <div class='price'>${dish.price()}тг</div>
+                                    
+                                </div>
+                                
                             </div>
                         </c:if>
                     </c:forEach>
+                    
+                </div>
+                <div class="categories_text">Шаурма</div>
+                <div class="categories">    
+                    <c:forEach var="dish" items = "${requestScope.dishes}">
+                        <c:if test = "${dish.category()  == 'Шаурма'}">
+                            <div class='dish'>
+                                <div class="full_description">
+                                    <img class='dishimg' src='${pageContext.request.contextPath}${dish.imagePath()}' alt=''>
+                                    <div class='dish_name'>${dish.name()}</div>
+                                <div class='dish_description'>${dish.description()}</div>
+                                </div>
+                                
+                                <div class="button_and_price">
+                                    <div class='price'>${dish.price()}тг</div>
+                                    
+                                </div>
+                                
+                            </div>
+                        </c:if>
+                    </c:forEach>
+                    
+                </div>
+                <div class="categories_text">Пицца</div>
+                <div class="categories">    
+                    <c:forEach var="dish" items = "${requestScope.dishes}">
+                        <c:if test = "${dish.category()  == 'Пицца'}">
+                            <div class='dish'>
+                                <div class="full_description">
+                                    <img class='dishimg' src='${pageContext.request.contextPath}${dish.imagePath()}' alt=''>
+                                    <div class='dish_name'>${dish.name()}</div>
+                                <div class='dish_description'>${dish.description()}</div>
+                                </div>
+                                
+                                <div class="button_and_price">
+                                    <div class='price'>${dish.price()}тг</div>
+                                    
+                                </div>
+                                
+                            </div>
+                        </c:if>
+                    </c:forEach>
+                    
                 </div>
                 <div class="categories_text">Фри, нагетсы</div>
                 <div class="categories">    
                     <c:forEach var="dish" items = "${requestScope.dishes}">
                         <c:if test = "${dish.category()  == 'Фри, нагетсы'}">
                             <div class='dish'>
-                                <img class='dishimg' src='${pageContext.request.contextPath}${dish.imagePath()}' alt=''>
-                                <div class='dish_name'>${dish.name()}</div>
+                                <div class="full_description">
+                                    <img class='dishimg' src='${pageContext.request.contextPath}${dish.imagePath()}' alt=''>
+                                    <div class='dish_name'>${dish.name()}</div>
                                 <div class='dish_description'>${dish.description()}</div>
-                                <div class='price'>${dish.price()}тг</div>
+                                </div>
+                                
+                                <div class="button_and_price">
+                                    <div class='price'>${dish.price()}тг</div>
+                                    
+                                </div>
+                                
                             </div>
                         </c:if>
                     </c:forEach>
+                    
                 </div>
                 <div class="categories_text">Другое</div>
                 <div class="categories">    
                     <c:forEach var="dish" items = "${requestScope.dishes}">
                         <c:if test = "${dish.category()  == 'Другое'}">
                             <div class='dish'>
-                                <img class='dishimg' src='${pageContext.request.contextPath}${dish.imagePath()}' alt=''>
-                                <div class='dish_name'>${dish.name()}</div>
+                                <div class="full_description">
+                                    <img class='dishimg' src='${pageContext.request.contextPath}${dish.imagePath()}' alt=''>
+                                    <div class='dish_name'>${dish.name()}</div>
                                 <div class='dish_description'>${dish.description()}</div>
-                                <div class='price'>${dish.price()}тг</div>
+                                </div>
+                                
+                                <div class="button_and_price">
+                                    <div class='price'>${dish.price()}тг</div>
+                                    
+                                </div>
+                                
                             </div>
                         </c:if>
                     </c:forEach>
+                    
                 </div>
         </div>
     </body>
