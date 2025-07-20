@@ -2,10 +2,10 @@
 <%@ taglib prefix="c" uri="jakarta.tags.core" %>
 
 <!DOCTYPE html>
-<link rel="stylesheet" href="${pageContext.request.contextPath}/css/edit.css?ts=${System.currentTimeMillis()}">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/css/complite.css?ts=${System.currentTimeMillis()}">
 <html>
     <head> 
-        <title>login</title>
+        <title>complite</title>
     </head>
     <body>
         <div class="main">

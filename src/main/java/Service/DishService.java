@@ -32,9 +32,16 @@ public class DishService {
                         dish.getName(), dish.getPrice());
     }
     public Dish fromDtotoDish(DishDto dishDto){
-        return new Dish(dishDto.id(), categoryService.fromCategorytoId(dishDto.category()),
-                dishDto.description(), dishDto.imagePath(), dishDto.name(),
-                dishDto.price());
+        if(dishDto.id() != 0L){
+            return new Dish(dishDto.id(), categoryService.fromCategorytoId(dishDto.category()),
+                    dishDto.description(), dishDto.imagePath(), dishDto.name(),
+                    dishDto.price());
+        }else {
+            return new Dish(categoryService.fromCategorytoId(dishDto.category()),
+                    dishDto.description(), dishDto.imagePath(), dishDto.name(),
+                    dishDto.price());
+        }
+
     }
 
     private DishService(){}

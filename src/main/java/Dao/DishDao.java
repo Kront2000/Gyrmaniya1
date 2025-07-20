@@ -34,6 +34,10 @@ public class DishDao {
                 WHERE id = ?
                 
             """;
+    private final static String DELETE_SQL = """
+            DELETE FROM dishes
+            WHERE id = ?
+            """;
 
     public boolean update(Dish dish){
         try (Connection connection = ConnectionManager.get();
@@ -48,6 +52,17 @@ public class DishDao {
             return true;
         } catch (SQLException e) {
             throw new DaoExeption(ExeptionMassages.UPDATE_DAO_ERROR);
+        }
+    }
+    public boolean delete(Long id) {
+        try (Connection connection = ConnectionManager.get();
+             PreparedStatement statement = connection.prepareStatement(DELETE_SQL)) {
+            statement.setLong(1, id);
+            statement.executeUpdate();
+            return true;
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
         }
     }
 

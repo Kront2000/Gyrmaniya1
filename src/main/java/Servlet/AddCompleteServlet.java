@@ -13,23 +13,22 @@ import jakarta.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
 
-@WebServlet("/complete")
+@WebServlet("/AddComplete")
 @MultipartConfig
-public class CompleteServlet extends HttpServlet {
-    @Override
+public class AddCompleteServlet extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         DishService dishService = DishService.getInstance();
         DishDao dishDao = DishDao.getInstance();
         CreateImagePath createImagePath = CreateImagePath.getInstance();
 
-        DishDto dishDto = new DishDto(Long.valueOf(req.getParameter("id")), req.getParameter("category"),
+        DishDto dishDto = new DishDto(0L, req.getParameter("category"),
                 req.getParameter("description"),
                 req.getPart("image").getSize() != 0 ? createImagePath.CreateImagePath(req.getPart("image"),
                         req.getParameter("id"),
                         getServletContext().getRealPath("/img/")): req.getParameter("image"),
                 req.getParameter("name"), Long.valueOf(req.getParameter("price")));
-        dishDao.update(dishService.fromDtotoDish(dishDto));
-        Long id = Long.valueOf(req.getParameter("id"));
+
+        Long id = dishDao.save(dishService.fromDtotoDish(dishDto)).getId();
         req.setAttribute("dish", dishService.findById(id));
         req.getRequestDispatcher("WEB-INF/jsp/complete.jsp").forward(req, resp);
     }

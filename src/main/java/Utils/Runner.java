@@ -6,6 +6,7 @@ import Dto.DishDto;
 import Entity.Categories;
 import Entity.Dish;
 import Service.DishService;
+import jakarta.servlet.http.Part;
 
 import java.util.List;
 
@@ -19,8 +20,10 @@ public class Runner {
 //                "Баварская",
 //                2200L);
 //        dishDao.save(dish);
-        DishService dishService = DishService.getInstance();
-        System.out.println(dishService.findById(20L));
+//        DishService dishService = DishService.getInstance();
+//        System.out.println(dishService.findById(20L));
+        CreateImagePath createImagePath = CreateImagePath.getInstance();
+
 
     }
 

@@ -5,6 +5,7 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <title>main</title>
         <meta charset="utf-8">
         <link rel="stylesheet" href="${pageContext.request.contextPath}/css/style.css?ts=${System.currentTimeMillis()}">
     </head>
