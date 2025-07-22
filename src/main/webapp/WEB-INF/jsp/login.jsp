@@ -15,7 +15,7 @@
                     <input class="inp" type="text" name="login" id="login" >
                 </label>
                 <label  for="login">Пароль
-                    <input class="inp" type="text" name="password" id="password" >
+                    <input class="inp" type="password" name="password" id="password" >
                 </label>
                 <input class="button" type="submit" value="Войти">
             </form>

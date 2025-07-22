@@ -16,6 +16,9 @@ public class ConnectionManager {
     private static final int DEFAULT_POOL_SIZE = 10;
     private static final String POOL_SIZE_KEY = "db.pool.size";
     private static BlockingQueue<Connection> pool;
+    private static final String URL = System.getenv("DB_URL");
+    private static final String USER = System.getenv("DB_USER");
+    private static final String PASSWORD = System.getenv("DB_PASSWORD");
 
     static {
         try{
@@ -62,10 +65,7 @@ public class ConnectionManager {
     }
 
     private static Connection open() throws SQLException {
-        return DriverManager.getConnection(
-                PropertiesUtil.get(URL_KEY),
-                PropertiesUtil.get(USERNAME_KEY),
-                PropertiesUtil.get(PASSWORD_KEY));
+        return DriverManager.getConnection(URL, USER, PASSWORD);
 
     }
 

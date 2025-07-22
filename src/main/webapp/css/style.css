@@ -1,5 +1,11 @@
+body{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
 .conteiner{
-    margin: 5px 150px;
+
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -14,9 +20,17 @@
     max-height: 90%;
     width: auto;
 }
-
+.top{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: center;
+    flex-direction: column;
+}
 .header{
     border-bottom: 1px rgb(215, 215, 215) solid;
+    width: 1203px;
+    
 }
 
 .KRB {
@@ -62,15 +76,20 @@
 
 .navig{
     /* margin: 5px 150px; */
-    padding: 5px 150px;
+    
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 1px rgb(215, 215, 215) solid;
+    width: 1203px;
+    
 }
 .menu{
 
     display: flex;
+}
+.line{
+    border-bottom: 1px rgb(215, 215, 215) solid;
+    width: 100%;
 }
 .menubutton{
     padding: 10px 20px;
@@ -147,7 +166,7 @@
 }
 
 .main{
-    margin: 5px 150px;
+    width: 1203px;
     display: flex;
     flex-direction: column;
 }
@@ -170,8 +189,112 @@
     
 }
 
-
-
-.full_description{
+@media  (min-width:800px) and (max-width:1200px){
+    .categories{
+    grid-template-columns: 1fr 1fr 1fr;
+    }
+    .main{
+    width: 800px;
+    }
+    .navig{
+    width: 800px;
+    }
+    .header{
+    width: 800px;
+    }
+}
+@media  (min-width:500px) and (max-width:800px){
+    .categories{
+    grid-template-columns: 1fr 1fr;
+    }
+    .main{
+    width: 500px;
+    }
+    .navig{
+    width: 500px;
+    }
+    .header{
+    width: 500px;
+    }
+    .logo{
+    height: 50px;
+    padding: 0px 20px 0px 0px;
+    }
+    .logoimg{
+    max-height: 90%;
+    width: auto;
+    }
+    .numbertext{
+    font-size: 10px;
+    }
+    .gps{
+    height: 10px;
+    }
+    .phone{
+    height: 10px;
+    margin-top: 0;
+    }
+    .phoneimg{
+        margin-bottom: 25px;
+    }
+    .KRB {
+    font-size: 10px;
+    }
+    .Dos{
+    font-size: 10px;
+    }
     
+}
+@media  (max-width:500px){
+    .categories{
+    grid-template-columns: 1fr;
+    }
+    .main{
+    width: 400px;
+    }
+    .navig{
+    width: 400px;
+    }
+    .header{
+    width: 400px;
+    }
+    .logo{
+    height: 40px;
+    padding: 0px 20px 0px 0px;
+    }
+    .logoimg{
+    max-height: 90%;
+    width: auto;
+    }
+    .numbertext{
+    font-size: 8px;
+    }
+    .gps{
+    height: 8px;
+    }
+    .phone{
+    height: 8px;
+    margin-top: 0;
+    }
+    .phoneimg{
+        margin-bottom: 25px;
+    }
+    .KRB {
+    font-size: 8px;
+    }
+    .Dos{
+    font-size: 8px;
+    }
+    .menubutton{
+    padding: 2px 10px;
+    font-size: 10px;
+    }
+}
+
+.main,
+.navig,
+.header {
+  width: 100%;
+  max-width: 1203px;
+  box-sizing: border-box;
 }

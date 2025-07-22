@@ -3,10 +3,11 @@
 
 
 <!DOCTYPE html>
-<link rel="stylesheet" href="${pageContext.request.contextPath}/css/admin.css?ts=${System.currentTimeMillis()}">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/css/style.css?ts=${System.currentTimeMillis()}">
 <html>
     <head>
         <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     </head>
     <body>
@@ -37,6 +38,7 @@
                 </div>
             </div>
         </div>
+        <div class="line"></div>
         <div class="navig">
             <div class="menu">
                 <a class="menubutton" href="">Сеты</a>
@@ -47,6 +49,7 @@
                 <a class="menubutton" href="">Напитки</a>
             </div>
         </div>
+        <div class="line"></div>
 
 
         </div>
